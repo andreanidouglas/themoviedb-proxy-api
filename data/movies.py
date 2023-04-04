@@ -60,7 +60,8 @@ class Movies:
         self.movie = m
 
 
-
 class MovieEncoder(json.JSONEncoder):
+    """Helper to allow movie to be encoded as JSON"""
+
     def default(self, o):
         return o.__dict__

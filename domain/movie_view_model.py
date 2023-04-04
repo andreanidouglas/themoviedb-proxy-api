@@ -4,6 +4,8 @@ from data.movies import Movies, MovieEncoder
 
 
 class MoviesViewModel:
+    """Define the view-model use cases to access the data"""
+
     def get_movies_use_case(self, page=1):
         m = Movies()
         m.get_movies(page)

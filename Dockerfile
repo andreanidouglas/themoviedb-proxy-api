@@ -1,10 +1,18 @@
-FROM python:3.9-alpine
+FROM python:3.9-bullseye
 
 WORKDIR /app
-COPY . /app
+EXPOSE 5000
 
-RUN python -m virtualenv v1
-RUN source v1/bin/activate
-RUN python -m pip install -r requirements.txt
+ENV VIRTUAL_ENV=/app/venv
+RUN python3 -m venv $VIRTUAL_ENV
 
-CMD ['flask', '--app', 'app', 'run']
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
+
+COPY app.py .
+COPY domain domain
+COPY data data 
+COPY config config
+
+CMD ["flask", "--app", "app", "run", "--host", "0.0.0.0"]

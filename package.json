@@ -1,0 +1,19 @@
+{
+  "name": "tvdb-test",
+  "version": "1.0.0",
+  "description": "This is a proxy to the movie api database.",
+ "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andreanidouglas/themoviedb-proxy-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andreanidouglas/themoviedb-proxy-api/issues"
+  },
+  "homepage": "https://github.com/andreanidouglas/themoviedb-proxy-api#readme",
+  "dependencies": {
+    "vercel": "^28.18.5"
+  }
+}
